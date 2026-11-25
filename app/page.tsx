@@ -5,6 +5,7 @@ import Artists from "@/components/Artists";
 import Aftercare from "@/components/Aftercare";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Aftercare />
       <FAQ />
       <Booking />
+       <Footer />
     </>
   );
 }
