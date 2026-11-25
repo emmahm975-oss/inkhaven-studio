@@ -32,36 +32,37 @@ export default function Portfolio() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {/* Changed to 2 columns on mobile */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         {images.map((image) => (
           <div 
             key={image.id} 
-            className="group relative aspect-square overflow-hidden rounded-sm cursor-pointer"
+            className="group relative aspect-square overflow-hidden rounded-sm cursor-pointer bg-surface"
           >
             <Image
               src={image.src}
               alt={`Tattoo style: ${image.style}`}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
             
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
-              <span className="text-white font-serif text-xl tracking-wider uppercase border-b-2 border-accent pb-1">
+              <span className="text-white font-serif text-sm md:text-xl tracking-wider uppercase border-b-2 border-accent pb-1">
                 {image.style}
               </span>
 
-              <div className="flex gap-3 mt-2">
+              <div className="flex gap-2 md:gap-3 mt-2">
                 <a 
                   href={image.src} 
                   download={`tattoo-inspiration-${image.id}.jpg`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/20 hover:bg-white text-white hover:text-black p-3 rounded-full transition-all duration-300"
+                  className="bg-white/20 hover:bg-white text-white hover:text-black p-2 md:p-3 rounded-full transition-all duration-300"
                   title="Download image"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Download size={20} />
+                  <Download size={16} className="md:w-5 md:h-5" />
                 </a>
 
                 <button 
@@ -69,14 +70,14 @@ export default function Portfolio() {
                     e.stopPropagation();
                     toggleSelection(image.id);
                   }}
-                  className={`p-3 rounded-full transition-all duration-300 ${
+                  className={`p-2 md:p-3 rounded-full transition-all duration-300 ${
                     selectedImages.includes(image.id) 
                       ? "bg-accent text-white" 
                       : "bg-white/20 hover:bg-white text-white hover:text-black"
                   }`}
                   title="Select this style"
                 >
-                  <Check size={20} />
+                  <Check size={16} className="md:w-5 md:h-5" />
                 </button>
               </div>
             </div>

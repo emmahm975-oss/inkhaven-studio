@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -14,7 +14,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10 md:mt-20">
         <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
           Art That <span className="text-accent italic">Lasts</span> Forever.
         </h1>

@@ -25,20 +25,21 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Changed to 2 columns on mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-12">
           {packages.map((pkg, index) => (
-            <div key={index} className="bg-surface border border-white/10 p-8 rounded-sm flex flex-col h-full hover:border-accent transition-colors duration-300">
-              <h3 className="font-serif text-2xl mb-2">{pkg.name}</h3>
-              <div className="text-4xl font-bold text-accent mb-4">{pkg.price}</div>
-              <p className="text-secondary text-sm flex-grow mb-6">{pkg.desc}</p>
-              <div className="flex items-center gap-2 text-sm text-primary mb-6">
-                <Check size={16} className="text-accent" /> Custom Designs Included
+            <div key={index} className="bg-surface border border-white/10 p-4 md:p-8 rounded-sm flex flex-col h-full hover:border-accent transition-colors duration-300">
+              <h3 className="font-serif text-lg md:text-2xl mb-2">{pkg.name}</h3>
+              <div className="text-2xl md:text-4xl font-bold text-accent mb-2 md:mb-4">{pkg.price}</div>
+              <p className="text-secondary text-xs md:text-sm flex-grow mb-4 md:mb-6">{pkg.desc}</p>
+              <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm text-primary mb-4 md:mb-6">
+                <Check size={14} className="text-accent shrink-0" /> Custom Designs Included
               </div>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full block text-center bg-primary text-background py-3 rounded-sm font-semibold uppercase tracking-wider hover:bg-secondary transition-colors"
+                className="w-full block text-center bg-primary text-background py-2 md:py-3 rounded-sm font-semibold uppercase tracking-wider hover:bg-secondary transition-colors text-xs md:text-base"
               >
                 Book Now
               </a>
